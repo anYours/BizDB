@@ -1,0 +1,70 @@
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/,file:E:/logs
+  devtools:
+    restart:
+      enabled: true
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    database: mysql
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 0
+  mail:
+    host: smtp.163.com
+    username: xp_luckly@163.com
+    password: mmp123456
+    default-encoding: utf-8
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+dbcfg:
+  dbtype: mysql
+  poolName: BIZ_POOL
+  path: spring
+  ip: 127.0.0.1
+  port: 3306
+  user: root
+  password: 1234
+  maxConnect: 1000
+  timeOut: 2000
+  charSet: UTF-8
+mail:
+  fromMail:
+    addr: xp_luckly@163.com
+path:
+  imgPath: E:\logs
+
+demo:
+  test:
+    name: 反杀的弗利萨打输了粉红色达拉反倒是卡后方可打发货单扫
+    des: 发货了发票发放大镜大批发的福克斯戴假发谁看得见节点

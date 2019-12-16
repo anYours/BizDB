@@ -1,0 +1,26 @@
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+#images li {
+    display: inline-block;
+    width: 43%;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    box-shadow: 0 0 8px #ccc;
+    margin: 0 15px 10px 0px;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+}
+li img {
+    width: 100%;
+}
