@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @Author wul
@@ -35,6 +36,7 @@ public class ImgController {
     @ResponseBody
     public List<Map<String, Object>> showImg(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo, Model model){
         int pageSize = 9;
+        log.info("当前第{}页", pageNo);
         int startIndex = (pageNo - 1) * pageSize;
         List<String> fields = new ArrayList<>();
         fields.add("IMG_PATH");
@@ -47,5 +49,18 @@ public class ImgController {
         return maps;
     }
 
+    @GetMapping("/getMaxPage")
+    @ResponseBody
+    public int getTotalPage(){
+        try {
+            final int count = bizDb.getCount(InitTbImgRunner.TABLE);
+            if(0 != count){
+                return count/9;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
 }
